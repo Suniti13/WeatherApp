@@ -1,38 +1,79 @@
+
 .App {
+  height: 100vh;
+  width: 100%;
+  background-color: #05e8ba;
+  background-image: linear-gradient(315deg, rgba(5, 232, 186, .85) 0%, rgba(8, 126, 225, .85) 74%),
+                    url('./bgImg.jpg');
+  background-size: 100% 100%;
+}
+
+.glassCard {
+  background: inherit;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.glassCard:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .35);
+  filter: blur(10px);
+  background: inherit;
+}
+
+.weatherCard {
+  height: 250px;
+  width: 20%;
+  min-width: 250px;
+  padding: 2rem;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cityInfo {
   text-align: center;
+  margin-top: 11px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cityInfo h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 200%;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cityInfo p {
+  margin: 0;
+  padding: 0;
+  font-size: 90%;
+  color: rgba(0, 0, 0, .6);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.imgDiv {
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 0;
+  border-radius: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.tempDiv {
+  text-align: center;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tempDiv h2 {
+  margin: 0;
+  font-size: 250%;
+  font-weight: 550;
 }
