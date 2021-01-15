@@ -12,15 +12,30 @@ function App() {
 
   // error handling and loading
   const getContent = () => {
-    if(error) return <h2>Error when fetching: {error}</h2>
-    if(!data && isLoading) return <h2>LOADING...</h2>
-    if(!data) return null;
+    if(error) {
+      let msg = `Error when fetching: ${error}`;
+      return <WeatherCard msg = {msg} />
+    }
+
+    if(!data && isLoading) {
+      let msg = `Loading...`;
+      return <WeatherCard msg = {msg} />
+    }
+
+    if(!data){
+      let msg = `Search for a City`;
+      return <WeatherCard msg = {msg} />
+    }
 
     return <WeatherCard data = {data} />
   };
 
   return (
     <div className="App">
+
+      <div className="header">
+        <h1>Weather App</h1>
+      </div>
       
       <CitySelector 
         onSearch={() => setUrl(`${ API_BASE_URL}/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)} 

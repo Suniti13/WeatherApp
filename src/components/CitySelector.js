@@ -9,7 +9,7 @@ function CitySelector({onSearch, setCity}) {
   };
 
   return (
-    <div className="citySelector glassCard">
+    <div className="citySelector">
       <input
         type="text"
         placeholder="Enter City"
@@ -18,7 +18,7 @@ function CitySelector({onSearch, setCity}) {
       />
       <button
         onClick={onSearch}
-      >Check Weather</button>
+      >Search</button>
     </div>
   );
 }
